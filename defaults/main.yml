@@ -67,9 +67,11 @@ nexus_application_host: '{{ httpd_setup_enable | ternary("127.0.0.1", "0.0.0.0")
 # i.e.
 # - Set your new password in nexus_admin_password
 # - Run `ansible-playbook -i your/inventory.ini your_playbook.yml -e nexus_default_admin_password=oldpassword`
+nexus_default_admin_login: 'admin'
 nexus_default_admin_password: 'admin123'
 # Nexus admin password to set and use.
 # Note: this should be vault encrypted in your playbook.
+nexus_admin_login: "{{ nexus_default_admin_login }}"
 nexus_admin_password: 'changeme'
 
 nexus_anonymous_access: false

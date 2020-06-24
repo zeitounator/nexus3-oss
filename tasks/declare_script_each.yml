@@ -3,7 +3,7 @@
   uri:
     url: "{{ nexus_api_scheme }}://{{ nexus_api_hostname }}:{{ nexus_api_port }}\
       {{ nexus_api_context_path }}{{ nexus_rest_api_endpoint }}/{{ item }}"
-    user: 'admin'
+    user: "{{ current_nexus_admin_login }}"
     password: "{{ current_nexus_admin_password }}"
     method: DELETE
     force_basic_auth: yes
@@ -14,7 +14,7 @@
   uri:
     url: "{{ nexus_api_scheme }}://{{ nexus_api_hostname }}:{{ nexus_api_port }}\
       {{ nexus_api_context_path }}{{ nexus_rest_api_endpoint }}"
-    user: 'admin'
+    user: "{{ current_nexus_admin_login }}"
     password: "{{ current_nexus_admin_password }}"
     body_format: json
     method: POST
